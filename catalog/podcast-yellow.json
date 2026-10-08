@@ -1,0 +1,83 @@
+{
+  "schema": "oracle.visual-contract/v1",
+  "id": "podcast-yellow",
+  "category": "audio-episode",
+  "title": "Infinity Podcast / X Spaces",
+  "intent": "Readable, mobile-first listening card showing one verifiable episode at a time",
+  "identity": {
+    "color": "warm-yellow",
+    "backgroundGradient": [
+      "#fff0ae",
+      "#eebf36"
+    ],
+    "text": "#24190a",
+    "border": "#9d7514",
+    "cornerRadiusPx": 12,
+    "noInfinitySymbol": true,
+    "creatorAttribution": "required"
+  },
+  "layouts": [
+    {
+      "id": "editorial",
+      "when": "long transcript or essay",
+      "sections": [
+        "host-and-title",
+        "episode-player-or-official-link",
+        "short-teaser",
+        "read-more",
+        "actions",
+        "next-episode"
+      ]
+    },
+    {
+      "id": "cover-led",
+      "when": "verified approved artwork",
+      "sections": [
+        "creator-and-cover",
+        "title",
+        "player",
+        "short-teaser",
+        "read-more",
+        "actions",
+        "next-episode"
+      ]
+    },
+    {
+      "id": "radio",
+      "when": "authorized playable audio",
+      "sections": [
+        "title",
+        "large-play-button",
+        "elapsed-duration-volume",
+        "read-more",
+        "actions",
+        "next-episode"
+      ]
+    }
+  ],
+  "rules": {
+    "firstEpisodeFree": true,
+    "fullDescriptionBehindReadMore": true,
+    "autoRotateOnlyIfNextItemFreeOrEntitled": true,
+    "noHorizontalSwipe": true,
+    "onAudioEnd": "episode-completed",
+    "onReadMoreClose": "description-finished",
+    "starInfluencesFutureTopics": true,
+    "showPriceBeforeSpend": true,
+    "neverChargeUnplayableMedia": true,
+    "noFabricatedDetails": true,
+    "attributionMandatory": true,
+    "sourceLinksHTTPS": true,
+    "wallet": "unified-wallet",
+    "rewardIssuer": "Infinity",
+    "paidRecipient": "creator verified wallet",
+    "rewardProof": "server-verified"
+  },
+  "quality": [
+    "Compare image to title; reject irrelevant, duplicate or unknown-rights art",
+    "Include actual native media controls only with authorized file",
+    "Never represent an X page link as an embedded audio player",
+    "Keep text accessible at 320px; maintain visible status when third-party player fails",
+    "Preserve original search/Quant history for relevance"
+  ]
+}
