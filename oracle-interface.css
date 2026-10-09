@@ -136,6 +136,32 @@ body.oracle-surface.oracle-reserve {background:radial-gradient(circle at 60% 0%,
 .oracle-quanta #result .qzoneYellow {color:#432d00}
 .oracle-quanta #result .qzoneBlue {color:#17385a}
 .oracle-quanta #result .qzoneRed {color:#5d2030}
+/* Adapter — Oracle Octaves keeps the real five-key piano and monitor,
+   replaces the generic dark wallet and squared-off page controls. */
+body.oracle-surface.oracle-octaves .topbar{background:rgba(255,255,255,.86);border-color:#e5d3f5;padding-left:10px;padding-right:10px;border-radius:0 0 18px 18px}
+.oracle-octaves .brand{color:#512682}
+.oracle-octaves .brand-mark{background:linear-gradient(135deg,#7b3cc8,#542087);border-radius:15px;color:#fff;box-shadow:0 0 20px rgba(135,74,221,.3)}
+.oracle-octaves :is(.card,.wallet-card){
+  background:linear-gradient(145deg,#fff,#f8f1ff)!important;color:#2a1a41!important;
+  border:1px solid #c6a2ee!important;border-radius:var(--oracle-radius)!important;
+  box-shadow:var(--oracle-shadow)!important;
+}
+.oracle-octaves .card h2{color:#532784;font-size:clamp(18px,3vw,21px);line-height:1.3}
+.oracle-octaves .card :is(.card-copy,.wallet-note,.wallet-label){color:#5f4a73!important}
+.oracle-octaves .quant-number{color:#6e35ba}
+.oracle-octaves .badge{background:#f0e4ff!important;color:#5b2d94!important;border:1px solid #d1b5ea}
+.oracle-octaves :is(.primary,.secondary,.transport){
+  min-height:44px;border-radius:999px!important;padding:10px 15px;font-weight:800;
+  border:1px solid #b68ddf;box-shadow:0 4px 14px rgba(127,77,187,.18)
+}
+.oracle-octaves .primary,.oracle-octaves .transport{color:#fff;background:linear-gradient(135deg,#7940c9,#5a269b);border-color:#7138b8}
+.oracle-octaves .secondary{color:#532885;background:linear-gradient(140deg,#fff,#f2e6ff)}
+.oracle-octaves .search-form input{border:1px solid #bba0d9;border-radius:999px;background:#fff;color:#332345;min-height:44px}
+.oracle-octaves .player{background:#f5ebff}
+.oracle-octaves .ad-slot{border-color:#cdb2e6}
+.oracle-octaves .monitor-readout{color:#594775}
+.oracle-octaves .key{background:linear-gradient(#fff,#faf8ff);color:#442a5e;border-color:#cfbfe0}
+.oracle-octaves .key.active{background:#e5ccfb}
 /* Adapter — Bitcoin Crusher preserves the genuine five-reel machine untouched. */
 .oracle-crusher .direction-card {
   border-radius:var(--oracle-radius);border:1px solid #b68beb;
