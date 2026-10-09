@@ -217,7 +217,7 @@ body.oracle-surface :is(
   text-decoration:none;text-align:center;white-space:normal;overflow-wrap:break-word;
   word-break:normal;transition:box-shadow .16s,border-color .16s,filter .16s;
 }
-.oracle-surface .oracle-octaves .piano-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.oracle-surface.oracle-octaves .piano-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
 .oracle-octaves .piano-controls > .phrase,.oracle-octaves .piano-controls > .status{grid-column:1/-1}
 .oracle-octaves .radio-controls{display:grid;grid-template-columns:1fr auto minmax(90px,1fr) 1fr;gap:9px;align-items:center;margin-top:13px}
 .oracle-octaves .radio-controls label{font-size:12px;font-weight:850;color:#5a308b}
