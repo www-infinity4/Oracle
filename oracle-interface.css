@@ -1,0 +1,164 @@
+/* ORACLE / Phi design system — single canonical stylesheet.
+   Source: github.com/www-infinity4/Oracle/oracle-interface.css
+   The original card content, wallet logic, reels and color identities are untouched.
+   Version: 2026-10-09 / daylight-oracle-1 */
+:root {
+  --oracle-paper:#fbf9ff;
+  --oracle-white:#ffffff;
+  --oracle-ink:#28183d;
+  --oracle-text:#3c2d50;
+  --oracle-muted:#6b5b7d;
+  --oracle-purple:#6b2db7;
+  --oracle-purple-deep:#4b1e84;
+  --oracle-outline:#c9acdf;
+  --oracle-edge:#cba5ee;
+  --oracle-glow:rgba(132,65,223,.3);
+  --oracle-gold:#dfb34d;
+  --oracle-radius:24px;
+  --oracle-pill:999px;
+  --oracle-touch:44px;
+  --oracle-shadow:0 13px 30px rgba(107,45,183,.18),0 0 16px rgba(132,65,223,.15);
+}
+body.oracle-surface {
+  color:var(--oracle-ink);
+  background:radial-gradient(ellipse at 48% -8%,rgba(163,110,246,.15),transparent 48%),linear-gradient(180deg,#fff,#faf7ff);
+  font-family:system-ui,-apple-system,Roboto,"Segoe UI",sans-serif;
+  text-rendering:optimizeLegibility;
+}
+.oracle-surface :is(button,a,input,textarea,select):focus-visible {
+  outline:3px solid #8654de;
+  outline-offset:3px;
+}
+.oracle-surface :is(.oracle-card,.direction-card,.card.oracle-adapt,.qzone.oracle-adapt,.ib-story.oracle-adapt){
+  border-radius:var(--oracle-radius);
+  box-shadow:var(--oracle-shadow);
+  overflow-wrap:break-word;
+}
+.oracle-surface .oracle-card {
+  position:relative;
+  isolation:isolate;
+  background:linear-gradient(145deg,#fff,#f7f0ff);
+  color:var(--oracle-ink);
+  border:1px solid var(--oracle-edge);
+  padding:clamp(16px,3vw,24px);
+}
+.oracle-surface .oracle-card--purple {
+  background:radial-gradient(circle at 100% 0%,rgba(158,103,249,.2),transparent 45%),linear-gradient(145deg,#fff,#ead7ff);
+  border:1px solid #ae7fe8;
+  box-shadow:0 0 0 1px rgba(175,115,244,.22),0 13px 28px rgba(110,53,174,.21),0 0 22px rgba(150,97,236,.28);
+}
+.oracle-surface .oracle-card--blue {--oracle-edge:#a2cef4;background:linear-gradient(145deg,#fff,#e0f1ff)}
+.oracle-surface .oracle-card--yellow {--oracle-edge:#dfc16b;background:linear-gradient(145deg,#fffefa,#fff2bb)}
+.oracle-surface .oracle-card--red {--oracle-edge:#eeb0bb;background:linear-gradient(145deg,#fff,#ffe0e6)}
+.oracle-surface .oracle-card--orange {--oracle-edge:#edbf85;background:linear-gradient(145deg,#fff,#ffead0)}
+.oracle-surface .oracle-card h2,.oracle-surface .oracle-card h3,
+.oracle-surface .direction-card h2,.oracle-surface .direction-card h3 {
+  color:#472570;line-height:1.26;text-wrap:balance;margin-top:0;
+}
+.oracle-surface .oracle-card p,.oracle-surface .direction-card p {
+  color:var(--oracle-text);font-size:clamp(13px,2.5vw,15px);line-height:1.58;
+}
+.oracle-surface .oracle-actions {
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,142px),1fr));
+  align-items:stretch;gap:9px;margin-top:15px;
+}
+.oracle-surface .oracle-action,
+.oracle-surface .oracle-actions > :is(a,button) {
+  display:inline-flex;justify-content:center;align-items:center;
+  box-sizing:border-box;min-width:0;min-height:var(--oracle-touch);
+  width:100%;padding:10px 14px;border:1px solid var(--oracle-outline);
+  border-radius:var(--oracle-pill);background:linear-gradient(155deg,#fff,#f3eaff);
+  color:var(--oracle-purple-deep);font:800 clamp(12px,2.8vw,13px)/1.38 system-ui,sans-serif;
+  text-align:center;text-decoration:none;white-space:normal;overflow-wrap:break-word;
+  word-break:normal;hyphens:auto;vertical-align:middle;
+  box-shadow:0 3px 12px rgba(103,56,172,.13);
+  cursor:pointer;transition:background .16s,box-shadow .16s,transform .16s;
+}
+.oracle-surface .oracle-action--primary,.oracle-surface .oracle-actions > .oracle-action--primary {
+  color:#fff;background:linear-gradient(135deg,#7d42cc,#57269c);border-color:#6a30b0;
+}
+.oracle-surface .oracle-action:hover,.oracle-surface .oracle-actions > :is(a,button):hover {
+  border-color:#8b49d5;box-shadow:0 0 0 2px rgba(145,83,222,.16),0 0 19px rgba(145,83,222,.32);
+}
+.oracle-surface .oracle-action:active,.oracle-surface .oracle-actions > :is(a,button):active {transform:scale(.98)}
+.oracle-surface .oracle-action:disabled {opacity:.58;cursor:not-allowed}
+.oracle-surface :is(.oracle-eyebrow,.oracle-label){
+  font-size:11px;letter-spacing:.1em;font-weight:900;text-transform:uppercase;color:#7542b0;
+}
+/* Adapter — existing Builder Reserve cards keep content and builder callbacks. */
+body.oracle-surface.oracle-reserve {background:radial-gradient(circle at 60% 0%,#ede0ff 0,transparent 45%),#fbf9ff}
+.oracle-reserve .card {
+  border-radius:var(--oracle-radius);border:1px solid #b48de4;
+  background:linear-gradient(150deg,#fff,#f2e5ff 72%,#e7d2ff);
+  box-shadow:var(--oracle-shadow);padding:clamp(16px,3vw,22px);
+}
+.oracle-reserve .card h2 {color:#45226e;line-height:1.3;overflow-wrap:break-word}
+.oracle-reserve .card p {color:#4a375d}
+.oracle-reserve .card .actions {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;
+  margin-top:17px;align-items:stretch;
+}
+.oracle-reserve .card .actions button {
+  min-height:var(--oracle-touch);width:100%;margin:0;
+  padding:10px 11px;border:1px solid var(--oracle-outline);
+  border-radius:var(--oracle-pill);background:linear-gradient(150deg,#fff,#efe2ff);
+  box-shadow:0 4px 14px rgba(122,70,196,.13);
+  color:var(--oracle-purple-deep);font:800 clamp(12px,2.7vw,13px)/1.35 system-ui,sans-serif;
+  white-space:normal;overflow-wrap:break-word;text-align:center;
+}
+.oracle-reserve .card .actions button.inf {background:linear-gradient(130deg,#7b3bd0,#5a258f);border-color:#672da7;color:#fff}
+.oracle-reserve .card .actions button.omni {background:#ede2fb;color:#4c227f}
+.oracle-reserve .card .actions button:hover {border-color:#9952db;box-shadow:0 0 18px rgba(150,92,220,.25)}
+.oracle-reserve .card .meta {font-size:11px;color:#7541a5;letter-spacing:.055em;line-height:1.45}
+/* Adapter — QuantaPhi's genuine multi-color cards stay red, yellow, blue, purple etc.
+   Only normalize overcrowded text and action controls; don't cover artwork. */
+.oracle-quanta #result :is(button,a):not(.q-oracle-avatar),
+.oracle-quanta #infiniteBook :is(button,a.ib-build-link),
+.oracle-quanta #fredSpacesRadio button,
+.oracle-quanta #phiImageBuilder button {
+  box-sizing:border-box;min-width:0;max-width:100%;
+  min-height:var(--oracle-touch);border-radius:var(--oracle-pill);
+  line-height:1.38;text-align:center;white-space:normal;
+  overflow-wrap:break-word;word-break:normal;
+}
+.oracle-quanta #result :is(.qreader-actions,.qdata-toolbar,.qzoneActions,.qactionRows,.qassimilate-actions),
+.oracle-quanta #infiniteBook :is(.ib-actions,.ib-build),
+.oracle-quanta #fredSpacesRadio :is(.fs-actions,.fs-builds) {gap:9px}
+.oracle-quanta #result :is(.qreader-actions,.qdata-toolbar,.qzoneActions) button {
+  padding:10px 13px;font-size:clamp(12px,2.6vw,13px);
+  border:1px solid #ccacdf;border-radius:var(--oracle-pill);
+  box-shadow:0 3px 10px rgba(106,60,157,.12);
+}
+.oracle-quanta #result .qzonePurple {
+  border-radius:26px;
+  box-shadow:0 0 0 1px #a75bfd94,0 10px 27px rgba(91,43,151,.31),0 0 20px rgba(165,95,255,.39);
+}
+.oracle-quanta #result .qzoneYellow {color:#432d00}
+.oracle-quanta #result .qzoneBlue {color:#17385a}
+.oracle-quanta #result .qzoneRed {color:#5d2030}
+/* Adapter — Bitcoin Crusher preserves the genuine five-reel machine untouched. */
+.oracle-crusher .direction-card {
+  border-radius:var(--oracle-radius);border:1px solid #b68beb;
+  background:linear-gradient(145deg,#fff,#f3e7ff 66%,#e7d3ff);
+  box-shadow:var(--oracle-shadow);
+}
+.oracle-crusher .direction-card .card-actions {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.oracle-crusher .direction-card .card-actions :is(button,a) {
+  display:flex;justify-content:center;align-items:center;
+  min-width:0;min-height:var(--oracle-touch);width:100%;padding:10px 12px;
+  border-radius:var(--oracle-pill);border:1px solid var(--oracle-outline);
+  background:#fff;color:var(--oracle-purple-deep);text-align:center;
+  white-space:normal;overflow-wrap:break-word;font:800 12px/1.35 system-ui,sans-serif;
+}
+.oracle-crusher .direction-card .card-actions :is(button,a):first-child {background:#7639bb;color:#fff}
+@media(min-width:760px){
+  .oracle-reserve .card .actions{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .oracle-crusher .direction-card .card-actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:390px){
+  .oracle-reserve .card .actions,.oracle-crusher .direction-card .card-actions {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .oracle-quanta #infiniteBook :is(.ib-actions,.ib-build) {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){
+  .oracle-surface .oracle-action,.oracle-surface .oracle-actions > :is(a,button){transition:none!important;transform:none!important}
+}
